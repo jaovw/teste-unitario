@@ -64,5 +64,5 @@ it('Deve retornar um erro caso tenha mais de um argumento alem dos desejado', ()
         add(n1,n2)
     }
 
-    expect(resultadoAdd).toThrow()
+    expect(resultadoAdd).toThrow(/is not iterable/)
 })
