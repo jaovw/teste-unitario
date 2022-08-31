@@ -35,3 +35,12 @@ it('Deve resultar na soma de dois arrauys numericos inseridos', () => {
     
     expect(resultado).toBe(resultadoEsperado)
 })
+
+it('Deve resultar 0 se nenhum numero for inserido', () => {
+
+    const numeros = []
+
+    const resultado = add(numeros)
+
+    expect(resultado).toBe(0)
+})
