@@ -54,3 +54,15 @@ it('Deve retornar um erro caso nao tenha valores inseridos', () => {
     expect(resultadoAdd).toThrow()
     // expect(resultadoAdd).not.toThrow()   OPOSTO DE EXPECT
 })
+
+it('Deve retornar um erro caso tenha mais de um argumento alem dos desejado', () => {
+
+    const n1 = 1
+    const n2 = 5
+
+    const resultadoAdd = () => {
+        add(n1,n2)
+    }
+
+    expect(resultadoAdd).toThrow()
+})
