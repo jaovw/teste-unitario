@@ -44,3 +44,13 @@ it('Deve resultar 0 se nenhum numero for inserido', () => {
 
     expect(resultado).toBe(0)
 })
+
+it('Deve retornar um erro caso nao tenha valores inseridos', () => {
+
+    const resultadoAdd = () => {
+        add()
+    }
+
+    expect(resultadoAdd).toThrow()
+    // expect(resultadoAdd).not.toThrow()   OPOSTO DE EXPECT
+})
