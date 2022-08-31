@@ -9,3 +9,12 @@ it('Deve tranformar string numerica em numero', () => {
 
     expect(resultado).toBeTypeOf('number')
 })
+
+it('Deve retornar NaN para string nao numericas', () => {
+
+    const input = 'string'
+
+    const resultado = transformToNumber(input)
+
+    expect(resultado).toBeNaN()
+})
