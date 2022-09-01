@@ -25,4 +25,13 @@ describe('generateResultText()', () => {
 
         expect(resultadoTexto).toContain(resultado.toString())
     })
+
+    it('Deve retornar uma string vazia se o resultado for "no-calc"', () => {
+
+        const resultado = 'no-calc'
+
+        const resultadoTexto = generateResultText(resultado)
+
+        expect(resultadoTexto).toBe('')
+    })
 })
