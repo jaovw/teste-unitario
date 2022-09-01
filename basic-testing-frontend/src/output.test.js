@@ -16,4 +16,13 @@ describe('generateResultText()', () => {
         expect(resultado2).toBeTypeOf('string')
         expect(resultado3).toBeTypeOf('string')
     })
+
+    it('Deve retornar uma string caso o resultado seja numerico', () => {
+
+        const resultado = 5
+
+        const resultadoTexto = generateResultText(resultado)
+
+        expect(resultadoTexto).toContain(resultado.toString())
+    })
 })
