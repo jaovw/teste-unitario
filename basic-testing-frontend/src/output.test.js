@@ -34,4 +34,13 @@ describe('generateResultText()', () => {
 
         expect(resultadoTexto).toBe('')
     })
+
+    it('Deve retornar uma string de valor "invalido" caso o resultado da funcao seja "invalid"', () => {
+
+        const resultado = 'Invalid'
+
+        const resultadoTexto = generateResultText(resultado)
+
+        expect(resultadoTexto).toContain('Invalid')
+    })
 })
