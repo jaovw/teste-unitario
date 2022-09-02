@@ -35,7 +35,7 @@ describe('cleanNumbers()', () => {
         const numerosLimpos = cleanNumbers(input)
 
         // expect(numerosLimpos[0]).toBeTypeOf('number')
-        // expect(numerosLimpos).toBe([1,2])    toBe CHECA IGUALDADE, POR SEREM DIFERENTES OBJETOS OCUPANDO DIFERENTES LOCAIS NA MEMORIA RETORNA UM ERRO
+        // expect(numerosLimpos).toBe([1,2])    toBe CHECA IGUALDADE COM REFERENCIA | toEqual CHECA VALOR EXATO (NO CASO DE OBJ VALOR/ESTRUTURA/PROPRIEDADE)
         expect(numerosLimpos).toEqual([1,2])
     })
 
