@@ -34,7 +34,9 @@ describe('cleanNumbers()', () => {
 
         const numerosLimpos = cleanNumbers(input)
 
-        expect(numerosLimpos[0]).toBeTypeOf('number')
+        // expect(numerosLimpos[0]).toBeTypeOf('number')
+        // expect(numerosLimpos).toBe([1,2])    toBe CHECA IGUALDADE, POR SEREM DIFERENTES OBJETOS OCUPANDO DIFERENTES LOCAIS NA MEMORIA RETORNA UM ERRO
+        expect(numerosLimpos).toEqual([1,2])
     })
 
     it('Deve retornar um erro caso um dos elementos do array seja nulo/vazio', () => {
