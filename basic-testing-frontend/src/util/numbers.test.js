@@ -36,4 +36,13 @@ describe('cleanNumbers()', () => {
 
         expect(numerosLimpos[0]).toBeTypeOf('number')
     })
+
+    it('Deve retornar um erro caso um dos elementos do array seja nulo/vazio', () => {
+
+        const input = ['', 3]
+
+        const numerosLimposFn = () => cleanNumbers(input)
+
+        expect(numerosLimposFn).toThrow
+    })
 })
