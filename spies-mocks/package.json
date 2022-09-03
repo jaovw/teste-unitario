@@ -1,0 +1,19 @@
+{
+  "name": "spies-mocks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "vitest --run --reporter verbose",
+    "test:watch": "vitest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "vitest": "^0.22.1"
+  },
+  "dependencies": {
+    "jsonwebtoken": "^8.5.1"
+  }
+}
