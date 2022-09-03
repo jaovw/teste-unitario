@@ -1,8 +1,9 @@
 import { it, expect, describe } from 'vitest'
-import { generateToken } from './async'
+import { generateToken, generateTokenPromise } from './async'
 
 describe('generateToken()', () => {
 
+    //  CALLBACK
     it('Deve gerar um token', (done) => {
 
         const emailTeste = 'teste@teste.com'
@@ -21,4 +22,17 @@ describe('generateToken()', () => {
             }
         })
     })
+})
+
+describe('generateTokenPromise()', () => {
+
+     //  PROMISES
+     it('Deve gerar um token', () => {
+
+        const emailTeste = 'teste@teste.com'
+
+        expect(generateTokenPromise(emailTeste)).resolves.toBeDefined()
+    })
+
+    
 })
