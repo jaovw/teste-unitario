@@ -11,7 +11,20 @@ beforeEach(() => {
   user = new User(testEmail)
 })
 
-it('Deve atualizar o email', () => {
+//  PARA REALIZAR TESTES EM PARALELO UTILIZA-SE O CONCURRENT
+//  SENDO UTIL EM CASOS DE MUITOS TESTES OU PRIORIZACAO DE UM BLOCO
+//  USANDO NO DESCRIBE() O BLOCO INTEIRO RECEBE A PATERNIDADE
+/*
+describe.concurrent('', () => {
+  it('', () => {
+
+  })
+  it('', () => {
+    
+  })
+})
+*/
+it.concurrent('Deve atualizar o email', () => {
   
   const newTestEmail = 'test2@test.com';
 
