@@ -17,3 +17,9 @@ Usando conceitos do curso realizado
 #### Rodando os testes
     npm run test 
     npm run test:watch
+
+
+
+### Spies x Mocks
+
+![image](https://user-images.githubusercontent.com/62576977/188279880-455e4fc2-fe4c-457d-ae4c-a8e6232bd09c.png)
