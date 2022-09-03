@@ -34,5 +34,12 @@ describe('generateTokenPromise()', () => {
         expect(generateTokenPromise(emailTeste)).resolves.toBeDefined()
     })
 
-    
+    it('Deve gerar um token', async () => {
+        
+        const emailTeste = 'teste@teste.com'
+
+        const token = await generateTokenPromise(emailTeste)
+
+        expect(token).toBeDefined()
+    })
 })
