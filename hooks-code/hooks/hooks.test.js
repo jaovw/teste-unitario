@@ -11,7 +11,7 @@ beforeEach(() => {
   user = new User(testEmail)
 })
 
-it('should update the email', () => {
+it('Deve atualizar o email', () => {
   
   const newTestEmail = 'test2@test.com';
 
@@ -20,26 +20,24 @@ it('should update the email', () => {
   expect(user.email).toBe(newTestEmail);
 });
 
-it('should have an email property', () => {
-
+it('Deve ter a propriedade email', () => {
 
   expect(user).toHaveProperty('email');
 });
 
-it('should store the provided email value', () => {
-
+it('Deve guardar o valor do email fornecido', () => {
 
   expect(user.email).toBe(testEmail);
 });
 
-it('should clear the email', () => {
+it('Deve limpar o email', () => {
 
   user.clearEmail();
 
   expect(user.email).toBe('');
 });
 
-it('should still have an email property after clearing the email', () => {
+it('sDeve permanecer a propriedade email apos limpar', () => {
 
   user.clearEmail();
 
