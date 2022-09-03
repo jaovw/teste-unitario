@@ -7,6 +7,10 @@ Usando conceitos do curso realizado
 
 ## Para comecar
 
+#### npm scripts
+![image](https://user-images.githubusercontent.com/62576977/188247870-1995473d-ad29-40ee-b09c-9a4fb816188f.png)
+
+
 #### Instalação de dependencias
     npm install 
     
