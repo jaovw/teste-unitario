@@ -1,4 +1,4 @@
-import { expect, it, vi } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 import { promises as fs } from 'fs'
 import writeData from './io'
 
@@ -13,14 +13,28 @@ vi.mock('path', () => {
     }
 })
 
-it('Deve executar o metodo fs,writeFile()', () => {
+describe('fs.writeData()', () => {
 
-    const testData = 'Test'
-    const testFileName = 'teste.txt'
+    it('Deve executar o metodo fs.writeFile()', () => {
 
-    writeData(testData, testFileName)
-    // return expect(writeData(testData, testFileName)).resolves.toBeUndefined()
-    // expect(fs.writeFile).toBeCalled()
+        const testData = 'Test'
+        const testFileName = 'teste.txt'
+    
+        writeData(testData, testFileName)
+        // return expect(writeData(testData, testFileName)).resolves.toBeUndefined()
+        // expect(fs.writeFile).toBeCalled()
+    
+        expect(fs.writeFile).toBeCalledWith(testFileName, testData)
+    })
+    
+    it('Deve retornar uma promise', async () => {
+    
+        const testData = 'Test'
+        const testFileName = 'teste.txt'
+    
+        const result = await writeData(testData, testFileName)
 
-    expect(fs.writeFile).toBeCalledWith(testFileName, testData)
+        expect(result).toBeUndefined()
+    })
+
 })
