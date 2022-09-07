@@ -8,6 +8,10 @@ const newFetch = vi.fn((url, options) => {
 
     return new Promise((resolve, reject) => {
 
+        if(typeof options.body !== 'string'){
+
+            return reject('Not a string')
+        }
         const response ={
             ok: true,
             json() {
@@ -31,4 +35,19 @@ it('Deve retornar qualquer response valida', async () => {
     const result = await sendDataRequest(data) 
 
     expect(result).toEqual(responseData)
+})
+
+it('Deve converter a data fornecida em JSON antes de enviar a requisicao' , async () => {
+
+    const data = {key: 'someKey'}
+
+    let errorMessage
+
+    try {
+        await sendDataRequest(data)
+    } catch (error) {
+        errorMessage = error
+    }
+
+    expect(errorMessage).not.toBe('Not a string')
 })
