@@ -1,4 +1,5 @@
 import { expect, it, vi } from 'vitest'
+import { HttpError } from './errors'
 import { sendDataRequest } from './http'
 //  MOKANDO AS REQUISICOES HTTP PARA NAO REALIZA-LAS EM UM CONTEXTO DE TESTE
 //  PODENDO SER EM RELACAO A LIB AXIOS, TERIA QUE UTILIZAR O DIRETORIO __mocks__ E CRIAR A FUNCAO
@@ -50,4 +51,28 @@ it('Deve converter a data fornecida em JSON antes de enviar a requisicao' , asyn
     }
 
     expect(errorMessage).not.toBe('Not a string')
+})
+
+it('Deve retornar um HTTPError para response com "ok: false"', () => {
+    //  MUDANDO OS PARAMETROS OU FUNCIONALIDADES DA MOCK CRIADA
+    newFetch.mockImplementationOnce((url, options) => {
+
+        return new Promise((resolve, reject) => {
+    
+            const response ={
+                ok: false,//  SENDO IMPLEMETADA APENAS UMA VEZ PARA ESSE TESTE EM ESPECIFICO
+                json() {
+                    return new Promise((resolve, reject) => {
+                        resolve(responseData)
+                    })
+                }
+            }
+    
+            resolve(response)
+        })
+    })
+
+    const data = {key: 'someKey'}
+
+    return expect(sendDataRequest(data)).rejects.toBeInstanceOf(HttpError)
 })
