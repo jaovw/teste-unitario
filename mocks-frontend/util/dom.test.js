@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import { Window } from 'happy-dom'
-import { it, vi } from 'vitest'
+import { expect, it, vi } from 'vitest'
 import { showError } from './dom'
 
 const htmlDocPath = path.join(process.cwd(), 'index.html')
@@ -13,7 +13,13 @@ document.write(htmlDocContent)
 
 vi.stubGlobal('document', document)
 
-it('Testando o ambiente emulado',  () => {
+it('Deve adicionar um paragrafo de erro nos elementos de id "errors"',  () => {
 
     showError('teste')
+
+    const errorsElement = document.getElementById('errors')
+    const errorParagraph = errorsElement.firstElementChild
+
+    expect(errorParagraph).not.toBeNull()
+
 })
