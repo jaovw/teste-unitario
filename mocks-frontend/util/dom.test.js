@@ -37,3 +37,15 @@ it('Nao deve conter um paragrafo de erro inicial', () => {
 
     expect(errorParagraph).toBeNull()    
 })
+
+it('Deve ter como conteudo no paragrafo a mensagem de erro fornecida', () => {
+
+    const errorMessage = 'Mensagem Teste'
+
+    showError(errorMessage)
+
+    const errorsElement = document.getElementById('errors')
+    const errorParagraph = errorsElement.firstElementChild
+
+    expect(errorParagraph.textContent).toBe(errorMessage)
+})
